@@ -1,5 +1,7 @@
 package com.escalab.service;
 
-public interface IConsultaExamenService {
+public interface IConsultaExamenService  {
+	
+	
 
 }

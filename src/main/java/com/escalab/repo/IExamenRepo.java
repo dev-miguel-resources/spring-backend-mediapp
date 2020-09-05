@@ -1,5 +1,9 @@
 package com.escalab.repo;
 
-public interface IExamenRepo {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.escalab.model.Examen;
+
+public interface IExamenRepo extends JpaRepository<Examen, Integer> {
 
 }

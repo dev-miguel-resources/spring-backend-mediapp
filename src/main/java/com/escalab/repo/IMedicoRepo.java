@@ -1,5 +1,9 @@
 package com.escalab.repo;
 
-public interface IMedicoRepo {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.escalab.model.Medico;
+
+public interface IMedicoRepo extends JpaRepository<Medico, Integer> {
 
 }

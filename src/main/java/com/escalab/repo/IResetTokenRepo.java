@@ -1,5 +1,11 @@
 package com.escalab.repo;
 
-public interface IResetTokenRepo {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.escalab.model.ResetToken;
+
+public interface IResetTokenRepo extends JpaRepository<ResetToken, Integer> {
+	
+	// consulta por definir
 
 }

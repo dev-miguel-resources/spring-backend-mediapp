@@ -1,5 +1,9 @@
 package com.escalab.repo;
 
-public interface IEspecialidadRepo {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.escalab.model.Especialidad;
+
+public interface IEspecialidadRepo extends JpaRepository<Especialidad, Integer> {
 
 }
