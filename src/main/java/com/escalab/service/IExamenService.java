@@ -1,5 +1,7 @@
 package com.escalab.service;
 
-public interface IExamenService {
+import com.escalab.model.Examen;
+
+public interface IExamenService extends ICRUD<Examen>{
 
 }

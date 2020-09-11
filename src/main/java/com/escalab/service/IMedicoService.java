@@ -1,5 +1,7 @@
 package com.escalab.service;
 
-public interface IMedicoService {
+import com.escalab.model.Medico;
+
+public interface IMedicoService extends ICRUD<Medico> {
 
 }

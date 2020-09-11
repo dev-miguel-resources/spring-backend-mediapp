@@ -1,5 +1,7 @@
 package com.escalab.service;
 
-public interface IEspecialidadService {
+import com.escalab.model.Especialidad;
+
+public interface IEspecialidadService extends ICRUD<Especialidad> {
 
 }
