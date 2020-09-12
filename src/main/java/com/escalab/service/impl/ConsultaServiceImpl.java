@@ -1,12 +1,13 @@
 package com.escalab.service.impl;
 
-
+import java.io.File;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,6 +18,11 @@ import com.escalab.model.Consulta;
 import com.escalab.repo.IConsultaExamenRepo;
 import com.escalab.repo.IConsultaRepo;
 import com.escalab.service.IConsultaService;
+
+import net.sf.jasperreports.engine.JasperExportManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 
 @Service
 public class ConsultaServiceImpl implements IConsultaService{
@@ -98,13 +104,17 @@ public class ConsultaServiceImpl implements IConsultaService{
 
 	@Override
 	public byte[] generarReporte() {
+		byte[] data = null;
 		
-		
-		
+		try {
+			File file = new ClassPathResource("/reports/consultas.jasper").getFile();
+			JasperPrint print = JasperFillManager.fillReport(file.getPath(), null, new JRBeanCollectionDataSource(this.listarResumen()));
+			data = JasperExportManager.exportReportToPdf(print);	
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return data;	
 	}
-
-
-
 }
 
 	
