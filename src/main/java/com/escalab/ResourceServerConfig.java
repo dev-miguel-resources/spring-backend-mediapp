@@ -1,5 +1,8 @@
 package com.escalab;
 
-public class ResourceServerConfig {
 
+
+public class ResourceServerConfig {
+	
+	
 }
