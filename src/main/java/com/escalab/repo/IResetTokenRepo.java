@@ -4,10 +4,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.escalab.model.ResetToken;
 
-
 public interface IResetTokenRepo extends JpaRepository<ResetToken, Integer> {
 	
-	//por realizar
+	//from ResetToken where token = :?
+	ResetToken findByToken(String token);
 
 }
 
